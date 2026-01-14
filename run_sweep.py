@@ -162,11 +162,21 @@ def generate_scaling_analysis(all_results: dict, sizes: list, dtypes: list):
     
     fig, axes = plt.subplots(1, 2, figsize=(14, 5))
     
+    # Define line styles and markers for each dtype to handle overlap
+    dtype_styles = {
+        "bfloat16": {"marker": "o", "linestyle": "-", "alpha": 0.8},
+        "float16": {"marker": "s", "linestyle": "--", "alpha": 0.7},
+        "float32": {"marker": "^", "linestyle": ":", "alpha": 0.9},
+        "fp8": {"marker": "D", "linestyle": "-.", "alpha": 0.6}
+    }
+    
     # Plot for each dtype
     for dtype in dtypes:
         avg_error_ratios = []
         avg_stability_gains = []
         valid_sizes = []
+        
+        style = dtype_styles.get(dtype, {"marker": "o", "linestyle": "-", "alpha": 0.7})
         
         for size in sizes:
             data = all_results[dtype].get(size)
@@ -194,8 +204,16 @@ def generate_scaling_analysis(all_results: dict, sizes: list, dtypes: list):
                 valid_sizes.append(size)
         
         if valid_sizes:
-            axes[0].plot(valid_sizes, avg_error_ratios, 'o-', label=dtype, markersize=8)
-            axes[1].plot(valid_sizes, avg_stability_gains, 's-', label=dtype, markersize=8)
+            axes[0].plot(
+                valid_sizes, avg_error_ratios, 
+                label=dtype, markersize=8, 
+                marker=style["marker"], linestyle=style["linestyle"], alpha=style["alpha"]
+            )
+            axes[1].plot(
+                valid_sizes, avg_stability_gains, 
+                label=dtype, markersize=8, 
+                marker=style["marker"], linestyle=style["linestyle"], alpha=style["alpha"]
+            )
     
     axes[0].axhline(y=1.0, color='black', linestyle='--', alpha=0.5)
     axes[0].set_xlabel("Matrix Size")

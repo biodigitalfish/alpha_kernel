@@ -1,0 +1,121 @@
+{
+  "timestamp": "20260114_100118",
+  "params": {
+    "size": 64,
+    "batch_size": 1,
+    "n_trials": 32
+  },
+  "alpha_wins_all": true,
+  "results": {
+    "gaussian": {
+      "alpha": {
+        "mean_error": 0.012631412633017054,
+        "std_error": 0.0003265121690733663,
+        "time": 0.0032782776562534366
+      },
+      "strassen": {
+        "mean_error": 0.01271231715319195,
+        "std_error": 0.0003492709315984681,
+        "time": 0.0010942406562612916
+      }
+    },
+    "relu": {
+      "alpha": {
+        "mean_error": 0.004597700610071932,
+        "std_error": 0.00011458742218412507,
+        "time": 0.0010941630625040943
+      },
+      "strassen": {
+        "mean_error": 0.007420560718265389,
+        "std_error": 0.0002974116109548743,
+        "time": 0.0010888500312589144
+      }
+    },
+    "gelu": {
+      "alpha": {
+        "mean_error": 0.00710674485478394,
+        "std_error": 0.00019424248499116004,
+        "time": 0.0011143169687564125
+      },
+      "strassen": {
+        "mean_error": 0.009242154549810951,
+        "std_error": 0.0003641605496328648,
+        "time": 0.001099533187502999
+      }
+    },
+    "biased": {
+      "alpha": {
+        "mean_error": 0.003356651352948558,
+        "std_error": 5.577655095611185e-05,
+        "time": 0.0010999809375036307
+      },
+      "strassen": {
+        "mean_error": 0.0068992426141844115,
+        "std_error": 0.0002589510113424277,
+        "time": 0.0010948446562544234
+      }
+    },
+    "attention": {
+      "alpha": {
+        "mean_error": 0.007460103042795218,
+        "std_error": 0.0003632187365319472,
+        "time": 0.0010947864999977241
+      },
+      "strassen": {
+        "mean_error": 0.010241644285582552,
+        "std_error": 0.0006960026501049751,
+        "time": 0.001097412624982752
+      }
+    },
+    "causal_transformer": {
+      "alpha": {
+        "mean_error": 0.009135495760965418,
+        "std_error": 0.0004965317333992032,
+        "time": 0.0010995334687606828
+      },
+      "strassen": {
+        "mean_error": 0.012222713941176855,
+        "std_error": 0.0004664267143934199,
+        "time": 0.0010912542187391239
+      }
+    }
+  },
+  "comparison": {
+    "gaussian": {
+      "alpha_error": 0.012631412633017054,
+      "strassen_error": 0.01271231715319195,
+      "improvement_pct": 0.6364262250535615,
+      "winner": "alpha"
+    },
+    "relu": {
+      "alpha_error": 0.004597700610071932,
+      "strassen_error": 0.007420560718265389,
+      "improvement_pct": 38.04106206213109,
+      "winner": "alpha"
+    },
+    "gelu": {
+      "alpha_error": 0.00710674485478394,
+      "strassen_error": 0.009242154549810951,
+      "improvement_pct": 23.105106969572276,
+      "winner": "alpha"
+    },
+    "biased": {
+      "alpha_error": 0.003356651352948558,
+      "strassen_error": 0.0068992426141844115,
+      "improvement_pct": 51.34753855376106,
+      "winner": "alpha"
+    },
+    "attention": {
+      "alpha_error": 0.007460103042795218,
+      "strassen_error": 0.010241644285582552,
+      "improvement_pct": 27.159127628587793,
+      "winner": "alpha"
+    },
+    "causal_transformer": {
+      "alpha_error": 0.009135495760965418,
+      "strassen_error": 0.012222713941176855,
+      "improvement_pct": 25.258041667906255,
+      "winner": "alpha"
+    }
+  }
+}

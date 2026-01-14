@@ -1,0 +1,121 @@
+{
+  "timestamp": "20260114_100230",
+  "params": {
+    "size": 1024,
+    "batch_size": 1,
+    "n_trials": 32
+  },
+  "alpha_wins_all": false,
+  "results": {
+    "gaussian": {
+      "alpha": {
+        "mean_error": 0.025362675855802614,
+        "std_error": 0.00010302797634960318,
+        "time": 0.013140018781257368
+      },
+      "strassen": {
+        "mean_error": 0.025328243753755666,
+        "std_error": 0.00010052034007805916,
+        "time": 0.010518021187486681
+      }
+    },
+    "relu": {
+      "alpha": {
+        "mean_error": 0.0027521367858050387,
+        "std_error": 1.6134592534788838e-05,
+        "time": 0.023986548187487244
+      },
+      "strassen": {
+        "mean_error": 0.008275636050673678,
+        "std_error": 6.442403967104154e-05,
+        "time": 0.026027794281255012
+      }
+    },
+    "gelu": {
+      "alpha": {
+        "mean_error": 0.0045881077330935695,
+        "std_error": 2.8988047202611233e-05,
+        "time": 0.024632146312494996
+      },
+      "strassen": {
+        "mean_error": 0.00924229115829863,
+        "std_error": 8.354815463724346e-05,
+        "time": 0.025538165531258983
+      }
+    },
+    "biased": {
+      "alpha": {
+        "mean_error": 0.001122309824358135,
+        "std_error": 6.6749941375159894e-06,
+        "time": 0.026182674312494214
+      },
+      "strassen": {
+        "mean_error": 0.007868549840278185,
+        "std_error": 0.00021692786421105125,
+        "time": 0.025915281218750863
+      }
+    },
+    "attention": {
+      "alpha": {
+        "mean_error": 0.014894703897355584,
+        "std_error": 0.0005018930948059179,
+        "time": 0.025097691187490057
+      },
+      "strassen": {
+        "mean_error": 0.02677626349343053,
+        "std_error": 0.0006806259642391842,
+        "time": 0.025530989687503336
+      }
+    },
+    "causal_transformer": {
+      "alpha": {
+        "mean_error": 0.01876282448862878,
+        "std_error": 0.0004959309141953073,
+        "time": 0.022856339312507856
+      },
+      "strassen": {
+        "mean_error": 0.02920423673140757,
+        "std_error": 0.0006809387150849046,
+        "time": 0.025748217125002526
+      }
+    }
+  },
+  "comparison": {
+    "gaussian": {
+      "alpha_error": 0.025362675855802614,
+      "strassen_error": 0.025328243753755666,
+      "improvement_pct": -0.13594350394642976,
+      "winner": "strassen"
+    },
+    "relu": {
+      "alpha_error": 0.0027521367858050387,
+      "strassen_error": 0.008275636050673678,
+      "improvement_pct": 66.74410560163528,
+      "winner": "alpha"
+    },
+    "gelu": {
+      "alpha_error": 0.0045881077330935695,
+      "strassen_error": 0.00924229115829863,
+      "improvement_pct": 50.35746380945899,
+      "winner": "alpha"
+    },
+    "biased": {
+      "alpha_error": 0.001122309824358135,
+      "strassen_error": 0.007868549840278185,
+      "improvement_pct": 85.73676411613786,
+      "winner": "alpha"
+    },
+    "attention": {
+      "alpha_error": 0.014894703897355584,
+      "strassen_error": 0.02677626349343053,
+      "improvement_pct": 44.373478767827514,
+      "winner": "alpha"
+    },
+    "causal_transformer": {
+      "alpha_error": 0.01876282448862878,
+      "strassen_error": 0.02920423673140757,
+      "improvement_pct": 35.753073565348885,
+      "winner": "alpha"
+    }
+  }
+}

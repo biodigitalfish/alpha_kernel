@@ -60,6 +60,43 @@ Columns: $[U_{0..3}, V_{0..3}, W_{0..3}]$
 
 > **The Stability Gain is the killer metric.** A value of 5.0x means Alpha-Kernel is 5 times less likely to produce outlier errors that could destabilize AI training.
 
+### Scaling Analysis
+
+As matrix size increases, Alpha's advantage compounds. At 4096×4096, Alpha achieves **4.6x lower error** in float32:
+
+![Scaling Analysis](test_results/sweep/scaling_analysis.png)
+
+### Sweep Results (float32)
+
+#### Error Ratio Sweep (float32)
+
+![Error Ratio Sweep](test_results/sweep/sweep_error_float32.png)
+
+#### Stability Sweep (float32)
+
+![Stability Sweep](test_results/sweep/sweep_stability_float32.png)
+
+### Sweep Results (float16)
+
+#### Error Ratio Sweep (float16)
+
+![Error Ratio Sweep](test_results/sweep/sweep_error_float16.png)
+
+#### Stability Sweep (float16)
+
+![Stability Sweep](test_results/sweep/sweep_stability_float16.png)
+
+### Sweep Results (bfloat16)
+
+#### Error Ratio Sweep (bfloat16)
+
+![Error Ratio Sweep](test_results/sweep/sweep_error_bfloat16.png)
+
+#### Stability Sweep (bfloat16)
+
+![Stability Sweep](test_results/sweep/sweep_stability_bfloat16.png)
+
+
 ## Usage
 
 ```bash

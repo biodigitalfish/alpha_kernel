@@ -158,7 +158,7 @@ python test_lab.py --size 1024 --dtype float16 --trials 32
 
 ## Discovery Methodology
 
-The Alpha-Kernel was discovered via automated search. Not brute force. The search engine optimized for:
+The search engine found the optimal coefficient by specifically constraining the search space to optimize for:
 
 1. Mathematical correctness (exact tensor reconstruction)
 2. Coefficient discreteness (restricting to {−1, 0, 1})
@@ -171,8 +171,6 @@ The Alpha-Kernel was discovered via automated search. Not brute force. The searc
 **Free to use. No license required.**
 
 The resulting kernel coefficients and verification code are released for public use.
-
-The search engine found the optimal coefficient by specifically constraining the search space to minimize the Bias Amplification Factor (BAF).
 
 ## Citation
 
